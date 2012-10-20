@@ -11,11 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020030500) do
+ActiveRecord::Schema.define(:version => 20121020055928) do
 
   create_table "availabilities", :force => true do |t|
     t.string   "calendar_id"
-    t.date     "date"
     t.integer  "user_id"
     t.boolean  "AM12",        :default => false
     t.boolean  "AM1",         :default => false
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20121020030500) do
     t.integer  "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.date     "date"
   end
 
   create_table "users", :force => true do |t|
@@ -61,5 +61,7 @@ ActiveRecord::Schema.define(:version => 20121020030500) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "users", ["phoneNumber"], :name => "index_users_on_phoneNumber", :unique => true
 
 end

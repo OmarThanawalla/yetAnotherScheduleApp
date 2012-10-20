@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-   attr_accessible :phoneNumber
+   	attr_accessible :first, :last, :phoneNumber, :password
 end

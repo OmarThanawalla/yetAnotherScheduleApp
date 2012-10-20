@@ -1,0 +1,13 @@
+<%= form_tag("/registration", :method => "post") do %>
+  <%= label_tag(:q, "First Name:") %>
+  <%= text_field_tag(:first) %></br>
+  <%= label_tag(:q, "Last Name:") %>
+  <%= text_field_tag(:last) %></br>
+  <%= label_tag(:q, "phoneNumber:") %>
+  <%= text_field_tag(:phoneNumber) %></br>
+  <%= label_tag(:q, "Password") %>
+  <%= text_field_tag(:password) %></br>
+ 
+  <%= submit_tag("Search") %>
+
+<% end %>
