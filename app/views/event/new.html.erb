@@ -1,0 +1,20 @@
+<%= form_tag("/event", :method => "post") do %>
+  <%= label_tag(:q, "description") %>
+  <%= text_field_tag(:description) %></br>
+  <%= label_tag(:q, "location") %>
+  <%= text_field_tag(:location) %></br>
+  <%= label_tag(:q, "date:") %>
+  <%= text_field_tag(:date) %></br>
+
+  <%= label_tag(:q, "phoneNumber") %>
+  <%= text_field_tag(:phoneNumber) %></br>
+  <%= label_tag(:q, "Password") %>
+  <%= text_field_tag(:password) %></br>
+  
+  
+  <%= label_tag(:q, "recipients") %>
+  <%= text_field_tag(:recipients) %></br>
+ 
+  <%= submit_tag("Search") %>
+
+<% end %>

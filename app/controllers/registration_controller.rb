@@ -1,15 +1,19 @@
 class RegistrationController < ApplicationController
 
+#GET /registration
   def index
   	phoneNumber = params[:phoneNumber]
   	password = params[:password]
   	
-  	if User.where(:phoneNumber => phoneNumber, :password => password)
-  	  render :json => ["Logged In"]
+  	@result = ["False"]
+  	myUser = User.where(:phoneNumber => phoneNumber, :password => password)
+  	if (myUser.length == 1 )
+  	  @result = ["Logged In"]
   	else
-  	  render :json => ["Invalid phoneNumber or password"]
+  	  @result = ["Invalid phoneNumber or password"]
   	end  
   	 
+  	 render :json => @result
   end
   
   #get registration/new

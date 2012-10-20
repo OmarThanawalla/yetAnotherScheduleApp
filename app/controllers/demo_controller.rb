@@ -1,5 +1,6 @@
 class DemoController < ApplicationController
-
+ #before_filter :whoAreYou
+ 
 def index
 	@myUser = User.all
 	render :json => @myUser
